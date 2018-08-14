@@ -1,8 +1,5 @@
-var $signUp = $("#signUp");
-
-
 var API = {
-    saveUser: function(example) {
+    saveExample: function(example) {
       return $.ajax({
         headers: {
           "Content-Type": "application/json"
@@ -12,16 +9,16 @@ var API = {
         data: JSON.stringify(example)
       });
     },
-    getUser: function() {
+    getExamples: function() {
       return $.ajax({
         url: "api/examples",
         type: "GET"
       });
     },
-    // deleteExample: function(id) {
-    //   return $.ajax({
-    //     url: "api/examples/" + id,
-    //     type: "DELETE"
-    //   });
-    // }
+    deleteExample: function(id) {
+      return $.ajax({
+        url: "api/examples/" + id,
+        type: "DELETE"
+      });
+    }
   };

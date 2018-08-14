@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "target1",
-    "database": "calorieapp",
+    "database": "calorieapp_db",
     "host": "localhost",
     "dialect": "mysql"
   },

@@ -2,8 +2,7 @@
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
-var $GoalList = $("#goal-list");
-
+var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -48,15 +47,15 @@ var refreshExamples = function() {
 
       var $button = $("<button>")
         .addClass("btn btn-danger float-right delete")
-        .text("Complete!");
+        .text("ｘ");
 
       $li.append($button);
 
       return $li;
     });
 
-    $GoalList.empty();
-    $GoalList.append($examples);
+    $exampleList.empty();
+    $exampleList.append($examples);
   });
 };
 
@@ -97,4 +96,4 @@ var handleDeleteBtnClick = function() {
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$GoalList.on("click", ".delete", handleDeleteBtnClick);
+$exampleList.on("click", ".delete", handleDeleteBtnClick);
