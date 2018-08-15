@@ -4,9 +4,9 @@ module.exports = function(app) {
   // Get all examples
 
 app.post("/api/username/profile/userinfo", function(req, res){
-  db.Post.create({
+  db.Profile.create({
     name: req.body.name,
-    age: req.body.name,
+    age: req.body.age,
     weight: req.body.weight,
     calorieGoal: req.body.calorieGoal,
     calories: req.body.calories})
@@ -15,9 +15,10 @@ app.post("/api/username/profile/userinfo", function(req, res){
     });
 });
 
-app.get("/api/username/profile/userinfo", function(req, res){
-  db.Profile.findAll({where: {
-    username: req.params.username
+app.get("/api/username/profile/userinfo/:id", function(req, res){
+  db.Profile.findAll(
+    {where: {
+    name: req.params.id
   }
 })
     .then(function(dbProfile) {
